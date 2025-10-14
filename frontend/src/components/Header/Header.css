@@ -2,10 +2,23 @@
   background: #fff;
   border-bottom: 1px solid #e8e8e8;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  padding: 0;
+  padding: 0 !important;
   position: sticky;
   top: 0;
   z-index: 1000;
+  height: auto !important;
+  line-height: normal !important;
+}
+
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Верхняя часть хедера */
+.header__top {
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .header__container {
@@ -22,52 +35,51 @@
   flex-shrink: 0;
 }
 
-.header__logo-img {
-  height: 32px;
-  width: auto;
+.header__logo a {
+  text-decoration: none;
 }
 
-.header__nav {
-  flex-shrink: 0;
-  margin: 0 24px;
+.header__logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+/* Нижняя часть хедера - навигация */
+.header__bottom {
+  background: #fafafa;
+}
+
+.header__bottom .header__container {
+  height: 48px;
 }
 
 .header__menu {
-  border-bottom: none;
+  border-bottom: none !important;
   background: transparent;
+  width: 100%;
+  line-height: 48px !important;
 }
 
 .header__menu .ant-menu-item {
-  padding: 0 16px;
+  padding: 0 24px;
   font-weight: 500;
   color: #333;
+  height: 48px;
+  line-height: 48px !important;
+  border-bottom: 2px solid transparent !important;
 }
 
-.header__menu .ant-menu-item:hover,
-.header__menu .ant-menu-item-selected {
-  color: #6e5dc6;
-  border-bottom-color: #6e5dc6;
+.header__menu .ant-menu-item a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.header__search {
-  flex: 1;
-  max-width: 400px;
-  margin: 0 16px;
+.header__menu .ant-menu-item span {
+  cursor: pointer;
 }
 
-.header__property-type {
-  width: 120px;
-}
-
-.header__search-input .ant-input {
-  border-left: none;
-}
-
-.header__search-btn {
-  height: 40px;
-  padding: 0 16px;
-}
-
+/* Действия */
 .header__actions {
   flex-shrink: 0;
 }
@@ -79,7 +91,7 @@
 }
 
 .header__action-btn:hover {
-  color: #6e5dc6;
+  color: #6e5dc6 !important;
 }
 
 .header__phone-btn {
@@ -90,11 +102,12 @@
 }
 
 .header__phone-btn:hover {
-  border-color: #6e5dc6;
-  color: #fff;
-  background-color: #6e5dc6;
+  border-color: #6e5dc6 !important;
+  color: #fff !important;
+  background-color: #6e5dc6 !important;
 }
 
+/* Мобильное меню */
 .header__mobile {
   display: none;
 }
@@ -131,42 +144,31 @@
     display: block;
   }
 
-  .header__search {
-    margin: 0 8px;
-    max-width: none;
+  .header__container {
+    height: 56px;
   }
 
-  .header__property-type {
-    width: 80px;
+  .header__top {
+    border-bottom: none;
   }
 
-  .header__search-btn {
-    padding: 0 12px;
-  }
-
-  .header__search-btn .ant-btn-icon {
-    margin-right: 0;
-  }
-
-  .header__search-btn span:not(.ant-btn-icon) {
-    display: none;
+  .header__logo span {
+    font-size: 20px !important;
   }
 }
 
 @media (max-width: 576px) {
   .header__container {
     padding: 0 12px;
+    height: 52px;
   }
 
-  .header__search {
-    margin: 0 4px;
+  .header__logo span {
+    font-size: 18px !important;
   }
 
-  .header__property-type {
-    display: none;
-  }
-
-  .header__search-input {
-    width: 100%;
+  .header__mobile-menu-btn {
+    height: 36px;
+    width: 36px;
   }
 }

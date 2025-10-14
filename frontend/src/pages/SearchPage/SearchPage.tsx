@@ -22,7 +22,7 @@ import PropertyCard from '../../components/PropertyCard/PropertyCard';
 // import SearchFilters from '../../components/SearchFilters/SearchFilters';
 import SearchForm from '../../components/SearchForm/SearchForm';
 import { formatResultsCount } from '../../utils/formatters';
-// import './SearchPage.css';
+import './SearchPage.css';
 
 const { Title, Text } = Typography;
 

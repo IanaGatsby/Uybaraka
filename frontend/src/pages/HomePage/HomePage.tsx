@@ -1,16 +1,6 @@
 import { useEffect } from 'react';
+import { Row, Col, Typography, Button, Spin } from 'antd';
 import {
-  Row,
-  Col,
-  Typography,
-  Card,
-  Button,
-  Space,
-  Statistic,
-  Spin,
-} from 'antd';
-import {
-  SearchOutlined,
   HomeOutlined,
   BankOutlined,
   ShopOutlined,
@@ -81,9 +71,9 @@ const HomePage = () => {
             >
               Найти недвижимость легко
             </Title>
-            <Paragraph className="home-hero__subtitle">
+            {/* <Paragraph className="home-hero__subtitle">
               Более 200 000 объявлений о продаже и аренде недвижимости
-            </Paragraph>
+            </Paragraph> */}
 
             <div className="home-hero__search">
               <SearchForm />
@@ -93,7 +83,7 @@ const HomePage = () => {
       </section>
 
       {/* Типы недвижимости */}
-      <section className="home-types">
+      {/* <section className="home-types">
         <div className="container">
           <Title
             level={2}
@@ -152,7 +142,7 @@ const HomePage = () => {
             ))}
           </Row>
         </div>
-      </section>
+      </section> */}
 
       {/* Рекомендуемые объекты */}
       <section className="home-featured">
@@ -202,7 +192,7 @@ const HomePage = () => {
             level={2}
             className="section-title text-center"
           >
-            Почему выбирают CIAN
+            Почему выбирают Uybaraka
           </Title>
 
           <Row

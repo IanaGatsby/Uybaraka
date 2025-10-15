@@ -198,10 +198,10 @@ const Footer = () => {
                 <div className="footer__contact">
                   <MailOutlined className="footer__contact-icon" />
                   <Link
-                    href="mailto:info@cian.ru"
+                    href="mailto:info@Uybaraka.ru"
                     className="footer__link"
                   >
-                    info@cian.ru
+                    info@uybaraka.uz
                   </Link>
                 </div>
                 <div className="footer__contact">
@@ -226,7 +226,7 @@ const Footer = () => {
               md={12}
             >
               <Text className="footer__copyright">
-                © {currentYear} CIAN. Все права защищены.
+                © {currentYear} Uybaraka. Все права защищены.
               </Text>
             </Col>
             <Col

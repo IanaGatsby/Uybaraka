@@ -1,0 +1,452 @@
+.search-page {
+  min-height: calc(100vh - 64px);
+  background: #f8f9fa;
+}
+
+/* Форма поиска */
+.search-page__form {
+  background: #fff;
+  padding: 24px 0;
+  border-bottom: 1px solid #e8e8e8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 64px;
+  z-index: 100;
+}
+
+/* Контент */
+.search-page__content {
+  padding: 32px 0;
+}
+
+/* Боковая панель */
+.search-page__sidebar {
+  position: sticky;
+  top: 150px;
+}
+
+/* Основной контент */
+.search-page__main {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Заголовок */
+.search-page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.search-page__results-info {
+  flex: 1;
+}
+
+.search-page__title {
+  margin: 0 !important;
+  color: #333 !important;
+  font-size: 24px !important;
+  font-weight: 600 !important;
+}
+
+.search-page__count {
+  display: block;
+  margin-top: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.search-page__controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-page__mobile-filters {
+  display: none;
+}
+
+.search-page__view-switcher .ant-btn-group {
+  display: flex;
+}
+
+.search-page__view-switcher .ant-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+/* Результаты */
+.search-page__results {
+  position: relative;
+}
+
+.search-page__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.search-page__grid {
+  margin-bottom: 32px;
+}
+
+/* Grid режим */
+.search-page__grid--grid .ant-col {
+  display: flex;
+}
+
+.search-page__grid--grid .property-card {
+  width: 100%;
+}
+
+/* List режим */
+.search-page__grid--list .property-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-page__grid--list .property-card .ant-card-cover {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.search-page__grid--list .property-card .property-card__image-container {
+  height: 200px;
+}
+
+.search-page__grid--list .property-card .ant-card-body {
+  flex: 1;
+  height: auto;
+}
+
+/* Пагинация */
+.search-page__pagination {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.search-page__pagination .ant-pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-page__pagination .ant-pagination-item,
+.search-page__pagination .ant-pagination-prev,
+.search-page__pagination .ant-pagination-next {
+  border-radius: 6px;
+  border-color: #d9d9d9;
+  transition: all 0.2s ease;
+}
+
+.search-page__pagination .ant-pagination-item:hover,
+.search-page__pagination .ant-pagination-prev:hover,
+.search-page__pagination .ant-pagination-next:hover {
+  border-color: #28a745;
+}
+
+.search-page__pagination .ant-pagination-item-active {
+  border-color: #28a745;
+  background-color: #28a745;
+}
+
+.search-page__pagination .ant-pagination-item-active a {
+  color: #fff;
+}
+
+.search-page__pagination .ant-pagination-options {
+  margin-left: 16px;
+}
+
+.search-page__pagination .ant-select-selector {
+  border-radius: 6px;
+}
+
+/* Empty state */
+.search-page__results .ant-empty {
+  padding: 80px 0;
+}
+
+.search-page__results .ant-empty-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .search-page__form {
+    top: 64px;
+  }
+
+  .search-page__content {
+    padding: 24px 0;
+  }
+
+  .search-page__main {
+    padding: 16px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .search-page__header {
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+  }
+
+  .search-page__title {
+    font-size: 20px !important;
+  }
+
+  .search-page__grid--list .property-card {
+    flex-direction: column;
+  }
+
+  .search-page__grid--list .property-card .ant-card-cover {
+    width: 100%;
+  }
+
+  .search-page__grid--list .property-card .ant-card-body {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-page__form {
+    padding: 16px 0;
+  }
+
+  .search-page__content {
+    padding: 16px 0;
+  }
+
+  .search-page__main {
+    padding: 12px;
+    background: transparent;
+  }
+
+  .search-page__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .search-page__results-info {
+    width: 100%;
+  }
+
+  .search-page__controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .search-page__mobile-filters {
+    display: flex;
+  }
+
+  .mobile-only {
+    display: flex !important;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .search-page__grid {
+    margin-bottom: 24px;
+  }
+
+  .search-page__pagination {
+    padding: 24px 0 12px;
+  }
+
+  .search-page__pagination .ant-pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .search-page__pagination .ant-pagination-options {
+    margin-left: 0;
+    margin-top: 12px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .search-page__pagination .ant-select {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .search-page__form {
+    padding: 12px 0;
+  }
+
+  .search-page__content {
+    padding: 12px 0;
+    background: #fff;
+  }
+
+  .search-page__main {
+    padding: 8px;
+  }
+
+  .search-page__header {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+  }
+
+  .search-page__title {
+    font-size: 18px !important;
+  }
+
+  .search-page__count {
+    font-size: 13px;
+    margin-top: 4px;
+  }
+
+  .search-page__mobile-filters {
+    font-size: 14px;
+    height: 36px;
+    padding: 0 12px;
+  }
+
+  .search-page__loading {
+    min-height: 300px;
+  }
+
+  .search-page__results .ant-empty {
+    padding: 60px 0;
+  }
+
+  .search-page__pagination .ant-pagination-item,
+  .search-page__pagination .ant-pagination-prev,
+  .search-page__pagination .ant-pagination-next {
+    min-width: 32px;
+    height: 32px;
+    line-height: 32px;
+  }
+
+  .search-page__pagination .ant-pagination-jump-prev,
+  .search-page__pagination .ant-pagination-jump-next {
+    min-width: 32px;
+    height: 32px;
+    line-height: 32px;
+  }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-page__grid > .ant-col {
+  animation: fadeIn 0.3s ease-out;
+  animation-fill-mode: both;
+}
+
+.search-page__grid > .ant-col:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.search-page__grid > .ant-col:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.search-page__grid > .ant-col:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.search-page__grid > .ant-col:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+/* Скрытие скролла для плавности */
+.search-page__content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.search-page__content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.search-page__content::-webkit-scrollbar-thumb {
+  background: #28a745;
+  border-radius: 4px;
+}
+
+.search-page__content::-webkit-scrollbar-thumb:hover {
+  background: #218838;
+}
+
+/* Состояния загрузки */
+/* .search-page__loading .ant-spin {
+  color: #28a745;
+}
+
+.search-page__loading .ant-spin-dot-item {
+  background-color: #28a745;
+} */
+
+/* Переходы между режимами просмотра */
+/* .search-page__grid {
+  transition: all 0.3s ease;
+}
+
+.search-page__view-switcher .ant-btn {
+  transition: all 0.2s ease;
+}
+
+.search-page__view-switcher .ant-btn-primary {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.search-page__view-switcher .ant-btn-primary:hover {
+  background-color: #218838;
+  border-color: #218838;
+} */
+
+/* Улучшение читаемости на мобильных */
+@media (max-width: 480px) {
+  .search-page__title {
+    font-size: 16px !important;
+  }
+
+  .search-page__count {
+    font-size: 12px;
+  }
+
+  .search-page__mobile-filters {
+    font-size: 13px;
+    height: 32px;
+    padding: 0 10px;
+  }
+
+  .search-page__mobile-filters .anticon {
+    font-size: 14px;
+  }
+}

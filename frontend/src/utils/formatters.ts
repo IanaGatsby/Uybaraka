@@ -5,16 +5,16 @@ export const formatPrice = (price: number): string => {
   if (price >= 1000000) {
     const millions = price / 1000000;
     if (millions % 1 === 0) {
-      return `${millions} млн ₽`;
+      return `${millions} млн UZS`;
     }
-    return `${millions.toFixed(1)} млн ₽`;
+    return `${millions.toFixed(1)} млн UZS`;
   }
 
   if (price >= 1000) {
-    return `${Math.round(price / 1000)} тыс. ₽`;
+    return `${Math.round(price / 1000)} тыс. UZS`;
   }
 
-  return `${price.toLocaleString('ru-RU')} ₽`;
+  return `${price.toLocaleString('ru-RU')} UZS`;
 };
 
 /**

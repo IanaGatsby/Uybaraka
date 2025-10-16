@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Layout, Button, Menu, Space, Drawer, Badge } from 'antd';
+import { Layout, Button, Menu, Space, Drawer, Badge, Dropdown } from 'antd';
 import {
   MenuOutlined,
   HeartOutlined,
@@ -9,6 +9,7 @@ import {
 } from '@ant-design/icons';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { setFilter } from '../../store/slices/filtersSlice';
+import { logout } from '../../store/slices/authSlice';
 import './Header.css';
 
 const { Header: AntHeader } = Layout;
@@ -18,10 +19,15 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { filters } = useAppSelector((state) => state.filters);
+  const { isAuthenticated, user } = useAppSelector((state) => state.auth);
 
   const handleDealTypeChange = (value: 'sale' | 'rent') => {
     dispatch(setFilter({ key: 'dealType', value }));
     navigate('/search');
+  };
+
+  const handleLogout = async () => {
+    await dispatch(logout());
   };
 
   const menuItems = [
@@ -84,13 +90,34 @@ const Header = () => {
                   </Button>
                 </Badge>
 
-                <Button
-                  type="text"
-                  icon={<UserOutlined />}
-                  className="header__action-btn"
-                >
-                  Войти
-                </Button>
+                {isAuthenticated && user ? (
+                  <Dropdown
+                    menu={{
+                      items: [
+                        {
+                          key: 'dashboard',
+                          label: <Link to="/dashboard">Личный кабинет</Link>,
+                        },
+                        {
+                          key: 'logout',
+                          label: 'Выйти',
+                          onClick: handleLogout,
+                        },
+                      ],
+                    }}
+                  >
+                    <Button type="text">
+                      <UserOutlined /> {user.firstName}
+                    </Button>
+                  </Dropdown>
+                ) : (
+                  <Button
+                    type="text"
+                    onClick={() => navigate('/login')}
+                  >
+                    <UserOutlined /> Войти
+                  </Button>
+                )}
 
                 <Button
                   type="default"

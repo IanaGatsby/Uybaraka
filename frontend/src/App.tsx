@@ -3,11 +3,23 @@ import { Provider } from 'react-redux';
 import { ConfigProvider, App as AntApp } from 'antd';
 import ruRU from 'antd/locale/ru_RU';
 import { store } from './store';
+
+// Layouts
 import MainLayout from './layouts/MainLayout';
+
+// Pages
 import HomePage from './pages/HomePage/HomePage';
 import SearchPage from './pages/SearchPage/SearchPage';
 import PropertyPage from './pages/PropertyPage/PropertyPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+
+// Auth Pages
+import Login from './pages/Auth/Login';
+import Register from './pages/Auth/Register';
+
+// Protected Route
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+
 import './styles/global.css';
 
 // Кастомная тема для Ant Design в стиле Baraka
@@ -51,6 +63,7 @@ function App() {
         <AntApp>
           <BrowserRouter>
             <Routes>
+              {/* Публичные страницы */}
               <Route
                 path="/"
                 element={<MainLayout />}
@@ -67,11 +80,34 @@ function App() {
                   path="property/:id"
                   element={<PropertyPage />}
                 />
-                <Route
-                  path="*"
-                  element={<NotFoundPage />}
-                />
               </Route>
+
+              {/* Авторизация */}
+              <Route
+                path="/login"
+                element={<Login />}
+              />
+              <Route
+                path="/register"
+                element={<Register />}
+              />
+
+              {/* Защищенные страницы (Dashboard) */}
+              <Route
+                path="/dashboard/*"
+                element={
+                  <ProtectedRoute>
+                    {/* <DashboardLayout /> */}
+                    <div>Dashboard будет здесь</div>
+                  </ProtectedRoute>
+                }
+              />
+
+              {/* 404 */}
+              <Route
+                path="*"
+                element={<NotFoundPage />}
+              />
             </Routes>
           </BrowserRouter>
         </AntApp>

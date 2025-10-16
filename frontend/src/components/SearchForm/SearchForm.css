@@ -1,0 +1,186 @@
+.search-form {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.search-form .ant-card-body {
+  padding: 24px;
+}
+
+/* Compact version */
+.search-form--compact {
+  width: 100%;
+  max-width: 600px;
+}
+
+.search-form--compact .ant-input-group {
+  display: flex;
+  width: 100%;
+}
+
+.search-form--compact .search-form__deal-type {
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.search-form--compact .search-form__property-type {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.search-form--compact .search-form__location {
+  flex: 1;
+  border-left: none;
+  border-right: none;
+}
+
+.search-form--compact .search-form__submit {
+  flex-shrink: 0;
+  border-left: none;
+}
+
+/* Main form */
+.search-form__main {
+  margin-bottom: 0;
+}
+
+.search-form__advanced-toggle {
+  padding: 0;
+  height: auto;
+  font-size: 14px;
+}
+
+.search-form__advanced {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Filter groups */
+.search-form__filter-group {
+  width: 100%;
+}
+
+.search-form__label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Price inputs */
+.search-form__price-input {
+  width: 50% !important;
+}
+
+.search-form__price-input:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
+.search-form__price-input:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Area inputs */
+.search-form__area-input {
+  width: 50% !important;
+}
+
+.search-form__area-input:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
+.search-form__area-input:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Rooms checkboxes */
+.search-form__rooms {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.search-form__rooms .ant-checkbox-wrapper {
+  margin: 0;
+  padding: 8px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.search-form__rooms .ant-checkbox-wrapper:hover {
+  border-color: #6e5dc6;
+}
+
+.search-form__rooms .ant-checkbox-wrapper-checked {
+  border-color: #6e5dc6;
+  background: rgba(40, 167, 69, 0.1);
+}
+
+.search-form__rooms .ant-checkbox {
+  display: none;
+}
+
+.search-form__rooms .ant-checkbox-wrapper span:last-child {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .search-form .ant-card-body {
+    padding: 16px;
+  }
+
+  .search-form__advanced {
+    margin-top: 16px;
+    padding-top: 16px;
+  }
+
+  .search-form--compact .search-form__deal-type {
+    width: 80px;
+  }
+
+  .search-form--compact .search-form__property-type {
+    width: 90px;
+  }
+}
+
+@media (max-width: 576px) {
+  .search-form--compact .ant-input-group {
+    flex-direction: column;
+  }
+
+  .search-form--compact .search-form__deal-type,
+  .search-form--compact .search-form__property-type,
+  .search-form--compact .search-form__location {
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+
+  .search-form--compact .search-form__submit {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .search-form__rooms {
+    justify-content: space-between;
+  }
+
+  .search-form__rooms .ant-checkbox-wrapper {
+    flex: 1;
+    text-align: center;
+    min-width: 50px;
+  }
+}
